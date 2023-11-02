@@ -1,5 +1,5 @@
 Este repositório contém o conteúdo ministrado na primeira aula de introdução a machine learning, na comunidade [DataEngineer Help](https://www.linkedin.com/company/dataengineerhelp/)
-<br>
+<br><br>
 # Introdução a Machine Learning, Scikit-Learn e KNN 
 <br><br>
 
@@ -121,12 +121,14 @@ A forma mais popular de se lidar no KNN é com a normalização min-max (min-max
 Outra abordagem é padronização z-score (z-score standardization). Não valores máximo e mínimo definidos, mas gera valores negativos, portanto deve-se levar em consideração ao realizar certos testes estatísticos.
 <br><br>
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/126623d5-c88e-4ac5-afc2-1a80710e2386)
-<br><br><br>
+<br><br>
 
 ## KNN é preguiçoso?
 Tecnicamente, não há abstração e generalização no algoritmo KNN, ele apenas compara valores mais próximos. Por isso é chamado de lazy learning. Como não há abstração, a fase de treino é bem mais rápida que outras técnicas, mas as previsões podem ser mais lentas. É dito que esta técnica não gera um modelo propriamente dito. Apesar disso, esta técnica não deve ser menosprezada, afinal o melhor modelo é aquele que entrega resultados satisfatórios e com um baixo custo computacional.
+<br><br>
 
- 
+## Referências
+LANTZ, Brett. Machine Learning With R.
 
 
 
