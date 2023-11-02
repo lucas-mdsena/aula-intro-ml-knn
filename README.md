@@ -1,7 +1,7 @@
 Este repositório contém o conteúdo ministrado na primeira aula de introdução a machine learning, na comunidade [DataEngineer Help](https://www.linkedin.com/company/dataengineerhelp/)
 <br>
 # Introdução a Machine Learning, Scikit-Learn e KNN 
-<br><br><br>
+<br><br>
 
 ## O que é Machine Learning?
 O aprendizado de máquina é uma área da computação que, diferentemente da computação tradicional em cada ação precisa ser devidamente programada, se destina ao desenvolvimento de algoritmos e modelos matemáticos/estatísticos capazes de “aprender” o comportamento de um fenômeno ou identificar similaridades a partir de dados prévios, assim sendo capaz de fazer previsões sobre o fenômeno ou diagnosticá-lo. 
@@ -67,33 +67,34 @@ Ele é treinado com uma base de dados contendo observações de n features (x) c
 **Vantagens:**
 <br>
 > Algoritmo de simples entendimento
+<br>
 > A etapa de treinamento é rápida
 <br>
 
 **Desvantagens:**
 <br>
-> Muito sensível a outliers e dados faltantes
-<br><br>
+> Muito sensível a outliers e dados faltantes <br>
+<br>
 
 ## Exemplo:
 <br><br>
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/de55f4eb-0d72-4173-8fa7-e1d35a06cb46)
 <br><br>
-Como temos apenas duas features, podemos representar de forma cartesiana.
+Como temos apenas duas features, podemos representar de forma cartesiana:
 <br><br>
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/f83fca5c-6567-4955-b01b-906de38b1220)
 <br><br>
-Podemos notar que comidas parecidas estão mais próximas umas das outras.
+Podemos notar que comidas parecidas estão mais próximas umas das outras:
 <br><br>
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/8821697b-eba0-4a9d-a0c3-ef49d61cbf9c)
-<br>
+<br><br>
 O que acontece se tentarmos inserir um novo alimento? Podemos usar a técnica de vizinhos próximos para determinar como será classificado.
 <br><br>
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/95fa2c28-9965-4980-b16e-d3cca0ca82d4)
 <br><br>
 Para saber quais são os vizinhos mais próximos do tomate, é necessário calcular sua distância até todos os outros vizinhos, portanto apenas features numéricas podem ser usadas neste algoritmo. Na presença de features categóricas, pode ser realizada um dummização. A função de distância mais tradicional é a euclidiana:
 <br><br>
-p e q são as observações em que sua distância está sendo calculada.
+p e q são as observações em que sua distância está sendo calculada:
 <br><br>
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/435fdab0-1cee-4762-a8a7-282a9748d691)
 <br><br>
@@ -112,13 +113,13 @@ Comumente, o valor de k é escolhido como a raiz quadrada do número de observa�
 
 ## Dimensão dos dados
 Um cuidado que sempre deve ser tomado ao lidar com KNN é quanto à dimensão dos dados. Como há um cálculo de distâncias para determinar a classificação, uma feature com dimensões muito grandes causará um desbalanço entre os valores calculados. Para lidar com isso, devemos trazer todas as features para a mesma escala.
-<br>
+<br><br>
 A forma mais popular de se lidar no KNN é com a normalização min-max (min-max normalization). Este processo transforma os números para uma escala entre 0 e 1.
-<br>
+<br><br>
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/d8182ebb-5dda-4beb-991e-f32a76695ec7)
-<br>
+<br><br>
 Outra abordagem é padronização z-score (z-score standardization). Não valores máximo e mínimo definidos, mas gera valores negativos, portanto deve-se levar em consideração ao realizar certos testes estatísticos.
-<br>
+<br><br>
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/126623d5-c88e-4ac5-afc2-1a80710e2386)
 <br><br><br>
 
