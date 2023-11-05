@@ -1,3 +1,139 @@
+[English/Português]
+<br><br>
+
+This repository contains the content taught in the first class of introduction to machine learning in the [DataEngineer Help](https://www.linkedin.com/company/dataengineerhelp/) community.
+<br><br>
+# Introduction to Machine Learning, Scikit-Learn, and KNN 
+<br><br>
+
+## What is Machine Learning?
+Machine learning is a field of computer science that, unlike traditional computing where every action needs to be explicitly programmed, is focused on developing algorithms and mathematical/statistical models capable of "learning" the behavior of a phenomenon or identifying similarities from previous data, thus being able to make predictions about the phenomenon or diagnose it. 
+<br><br>
+
+## How do machines learn?
+Have you ever wished for a photographic memory when studying for an exam? Well, without understanding the material, it's likely that it wouldn't help you much, because your knowledge would be limited to exactly what you memorized - input of data. It is more effective to understand the general concepts and main ideas, so that we can abstract rather than trying to memorize everything that exists. Machines learn in a similar way. 
+<br>
+
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/bee99b33-693c-49ce-8f4d-6af481168f74)
+<br>
+
+Although it is written "This is not a pipe," we recognize that it is. Our brain is capable of abstracting a painting because it has been exposed to images of pipes from different angles for years, being able to generalize to recognize pipes of different colors, sizes, and shapes. Training a machine learning model on a set of data is called training. Thus, it can search for key concepts in the abstracted data during training (pipes have a mouth, stem) to make decisions - to generalize. Just like our learning is related to what we are exposed to, the machine is too. The model will be as good as the data that was used for its training. If a facial recognition algorithm is trained using only people without glasses, when it sees a person with glasses, it will not say it's a face. It is not able to generalize well. We say that in this case, the data has bias.
+<br>
+
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/28c4c2a3-d7fb-4d23-a643-2ab0020fd82d)
+<br><br>
+
+## Types of learning
+For each type of situation, there is a more suitable learning approach that will involve different steps. The three ways a computer learns can be divided into **supervised learning**, **unsupervised learning**, and **reinforcement learning**.
+<br><br>
+**Supervised learning:** is so named because it is like learning from a teacher. The data used for learning already provides examples of the phenomenon to be learned, such as the price of a property, and other features that may or may not influence it, such as its size, location. In this example, the goal of the algorithm would be to predict the value of a new property based on the provided characteristics. 
+<br><br>
+**Unsupervised learning:** this time there is no teacher, as there is no phenomenon to be predicted or classified. The goal is to identify patterns in the provided data. For example, in a database of customers from a retail network, groups of customers more similar to each other could be identified based on their previous purchases, and grouped to target promotions more effectively. 
+<br><br>
+**Reinforcement learning:** similar to supervised, there are examples of the studied phenomenon in the database, but there is one more step. The output of the algorithm is always evaluated and compared to a possible expected result, such as a reward or penalty, in order to adjust the algorithm's parameters and obtain a better result. It's like training a dog. 
+<br><br>
+
+## Learning stages
+**Data acquisition:** data can be available in structured form - xlxs files, csv, SQL database, semi-structured - json and xml, and unstructured - images and text.
+<br><br>
+**Exploration, cleaning, and data treatment:** again, a model will be as good as the data that was used for its training. This is the stage where you get to know the data and a good part of your time will be spent here, if not the most. In this process, the presence of outliers, missing values, normality of distributions should be checked. Questions should be asked and statistical tests performed. Correlation between predictor and predicted variables. Standardization or normalization of variable dimensions, encoding and choosing which ones can or cannot be eliminated from the database (feature engineering).
+<br><br>
+**Training the model on the data:** the technique is chosen according to the problem - there is no perfect technique. At this point, the model is adjusted to the dataset that was processed in the previous step. The relationship between the variables is mapped (inputs and outputs) to "learn" key concepts. The trained model represents the dataset it received.
+<br><br>
+**Testing and validation:** after training, the model receives data that was not seen during training. There are metrics for evaluating the quality of a model's output, such as accuracy, recall.
+<br><br>
+**Optimization:** the result that the model delivers in the test is not final. Each technique has parameters to be chosen for learning that will influence its result, such as the depth of a decision tree and the method of distance calculation in KNN.
+<br><br>
+**Deployment:** after fine-tuning the model, it can be put into production to make real-time predictions, classifications, or diagnoses. A model can be hosted in a cloud environment, implemented in software.
+<br><br>
+
+## Scikit-Learn
+Scikit-Learn is an open-source Python library for predictive analysis, data preprocessing, and machine learning. It was developed using the NumPy and SciPy mathematical libraries. It offers a high-level approach to implementing models and machine learning and is widely used by language users.
+<br>
+[Scikit-Learn](https://scikit-learn.org/stable/#)
+<br><br><br>
+
+# Classification with KNN
+## Introduction
+Imagine you are doing a blind taste test. You have all your years of knowledge about food and dishes, taste, texture, smell. So if you taste a peanut without seeing it, you will recognize it by taste, texture, and shape. In other words, you classified a food as a peanut based on its characteristics - features. But what if it were a chestnut? It has a somewhat similar shape, it's also salty and crunchy. If we were to create groups, peanuts and chestnuts could certainly be grouped together based on these characteristics. We can say they are neighbors.
+<br><br>
+The nearest neighbors classification technique is capable of classifying an unlabeled observation according to the class of the nearest examples (neighbors) to it. It will work better as there is a clear distinction between groups and intra-group similarities. Otherwise, it may not be the best choice.
+<br><br>
+
+## KNN Algorithm
+KNN (k-nearest neighbors) is the algorithm that implements nearest neighbors classification. 
+<br>
+It is trained with a database containing observations of n features (x) classified into various categories (y). A test set with different observations of the same features is submitted to the trained model, which, for each observation, will identify k records in the training data that are most similar to it. This test observation will be classified according to the class of the majority of the k neighbors.
+<br><br>
+**Advantages:**
+<br>
+> Algorithm of simple understanding
+<br>
+> The training stage is fast
+<br>
+
+**Disadvantages:**
+<br>
+> Very sensitive to outliers and missing data <br>
+<br>
+
+## Example:
+<br><br>
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/de55f4eb-0d72-4173-8fa7-e1d35a06cb46)
+<br><br>
+Since we have only two features, we can represent them in a Cartesian way:
+<br><br>
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/f83fca5c-6567-4955-b01b-906de38b1220)
+<br><br>
+We can notice that similar foods are closer to each other:
+<br><br>
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/8821697b-eba0-4a9d-a0c3-ef49d61cbf9c)
+<br><br>
+What happens if we try to insert a new food? We can use the nearest neighbors technique to determine how it will be classified.
+<br><br>
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/95fa2c28-9965-4980-b16e-d3cca0ca82d4)
+<br><br>
+To know which are the nearest neighbors of the tomato, it is necessary to calculate its distance to all the other neighbors, so only numerical features can be used in this algorithm. In the presence of categorical features, dummy encoding can be performed. The most traditional distance function is the Euclidean distance:
+<br><br>
+p and q are the observations for which their distance is being calculated:
+<br><br>
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/435fdab0-1cee-4762-a8a7-282a9748d691)
+<br><br>
+Let's say the tomato has a sweetness of 6 and crunchiness of 4, its distance to the other foods would be:
+<br><br>
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/c2d5e948-08f0-4f71-9ff1-a89eb9a4fcb4)
+<br><br>
+With the distances calculated, we must choose the number of neighbors we will compare, k. If k=1, then the tomato is classified as a fruit, since the smallest distance is 1.4. If we set k=3, it will choose the class that occurs most frequently. In this case, 2 fruits and 1 protein - classified as fruit again.
+<br><br>
+K is a hyperparameter of the algorithm and its choice will affect the accuracy of the final model. If we set k too high, it can be a way to shield against high variance in the data, but we may have a problem called overfitting - the model memorizes the training data and its ability to generalize will be very low.
+<br><br>
+On the other hand, if k is set to 1, we may have underfitting - the comparison factor of the model will be too low.
+<br><br>
+Commonly, the value of k is chosen as the square root of the number of observations in the training set. There is also the practice of testing with values between 3 and 10. In any case, the value of k should be explored, we will see this in the model optimization part.
+<br><br>
+
+## Data dimensionality
+One care that should always be taken when dealing with KNN is regarding the dimensionality of the data. Since there is a calculation of distances to determine the classification, a feature with very large dimensions will cause an imbalance between the calculated values. To deal with this, we must bring all features to the same scale.
+<br><br>
+The most popular way to handle this in KNN is with min-max normalization. This process transforms the numbers to a scale between 0 and 1.
+<br><br>
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/d8182ebb-5dda-4beb-991e-f32a76695ec7)
+<br><br>
+Another approach is z-score standardization. No maximum and minimum values are defined, but it generates negative values, so this should be taken into account when performing certain statistical tests.
+<br><br>
+![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/126623d5-c88e-4ac5-afc2-1a80710e2386)
+<br><br>
+
+## Is KNN lazy?
+Technically, there is no abstraction and generalization in the KNN algorithm, it only compares closest values. That's why it's called lazy learning. Since there is no abstraction, the training phase is much faster than other techniques, but predictions may be slower. It is said that this technique does not generate a proper model. Despite this, this technique should not be underestimated, after all, the best model is the one that delivers satisfactory results with low computational cost.
+<br><br>
+
+## References
+LANTZ, Brett. Machine Learning With R.
+<br><br>
+
+***
+***
 Este repositório contém o conteúdo ministrado na primeira aula de introdução a machine learning, na comunidade [DataEngineer Help](https://www.linkedin.com/company/dataengineerhelp/)
 <br><br>
 # Introdução a Machine Learning, Scikit-Learn e KNN 
