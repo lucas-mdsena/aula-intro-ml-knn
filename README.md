@@ -11,13 +11,13 @@ Machine learning is a field of computer science that, unlike traditional computi
 <br><br>
 
 ## How do machines learn?
-Have you ever wished for a photographic memory when studying for an exam? Well, without understanding the material, it's likely that it wouldn't help you much, because your knowledge would be limited to exactly what you memorized - input of data. It is more effective to understand the general concepts and main ideas, so that we can abstract rather than trying to memorize everything that exists. Machines learn in a similar way. 
+Could a fotographic memory save you in an exam? Well, without understanding the subject, it's likely that it wouldn't help you much, because your knowledge would be limited to exactly what you memorized - input of data. It is more effective to understand the general concepts and main ideas, so that we can abstract rather than trying to memorize everything that exists. Machines learn in a similar way. 
 <br>
 
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/bee99b33-693c-49ce-8f4d-6af481168f74)
 <br>
 
-Although it is written "This is not a pipe," we recognize that it is. Our brain is capable of abstracting a painting because it has been exposed to images of pipes from different angles for years, being able to generalize to recognize pipes of different colors, sizes, and shapes. Training a machine learning model on a set of data is called training. Thus, it can search for key concepts in the abstracted data during training (pipes have a mouth, stem) to make decisions - to generalize. Just like our learning is related to what we are exposed to, the machine is too. The model will be as good as the data that was used for its training. If a facial recognition algorithm is trained using only people without glasses, when it sees a person with glasses, it will not say it's a face. It is not able to generalize well. We say that in this case, the data has bias.
+Although it is written "This is not a pipe," we recognize that it is. Our brain is capable of abstracting a painting because it has been exposed to images of pipes from different angles for years, being able to generalize to recognize pipes of different colors, sizes, and shapes. Training a machine learning model on a dataset is called training. Thus, it can search for key concepts in the abstracted data during training (pipes have a mouth, stem) to make decisions - to generalize. Just like our learning is related to what we are exposed to, the machine is too. The model will be as good as the data that was used for its training. If a facial recognition algorithm is trained using only people without glasses, when it sees a person with glasses, it will not say it's a face. It is not able to generalize well. We say that, in this case, the data has bias.
 <br>
 
 ![image](https://github.com/lucas-mdsena/aula-intro-ml-knn/assets/93884007/28c4c2a3-d7fb-4d23-a643-2ab0020fd82d)
@@ -28,7 +28,7 @@ For each type of situation, there is a more suitable learning approach that will
 <br><br>
 **Supervised learning:** is so named because it is like learning from a teacher. The data used for learning already provides examples of the phenomenon to be learned, such as the price of a property, and other features that may or may not influence it, such as its size, location. In this example, the goal of the algorithm would be to predict the value of a new property based on the provided characteristics. 
 <br><br>
-**Unsupervised learning:** this time there is no teacher, as there is no phenomenon to be predicted or classified. The goal is to identify patterns in the provided data. For example, in a database of customers from a retail network, groups of customers more similar to each other could be identified based on their previous purchases, and grouped to target promotions more effectively. 
+**Unsupervised learning:** this time there is no teacher, as there is no phenomenon to be predicted or classified. The goal is to identify patterns in the provided data. For example, in a database of customers from a retailer, groups of customers more similar to each other could be identified based on their previous purchases, and grouped to target promotions more effectively. 
 <br><br>
 **Reinforcement learning:** similar to supervised, there are examples of the studied phenomenon in the database, but there is one more step. The output of the algorithm is always evaluated and compared to a possible expected result, such as a reward or penalty, in order to adjust the algorithm's parameters and obtain a better result. It's like training a dog. 
 <br><br>
@@ -48,14 +48,14 @@ For each type of situation, there is a more suitable learning approach that will
 <br><br>
 
 ## Scikit-Learn
-Scikit-Learn is an open-source Python library for predictive analysis, data preprocessing, and machine learning. It was developed using the NumPy and SciPy mathematical libraries. It offers a high-level approach to implementing models and machine learning and is widely used by language users.
+Scikit-Learn is an open-source Python library for predictive analysis, data preprocessing, and machine learning. It was developed using the NumPy and SciPy mathematical libraries. It offers a high-level approach to implementing models and machine learning and is widely used by Python users.
 <br>
 [Scikit-Learn](https://scikit-learn.org/stable/#)
 <br><br><br>
 
 # Classification with KNN
 ## Introduction
-Imagine you are doing a blind taste test. You have all your years of knowledge about food and dishes, taste, texture, smell. So if you taste a peanut without seeing it, you will recognize it by taste, texture, and shape. In other words, you classified a food as a peanut based on its characteristics - features. But what if it were a chestnut? It has a somewhat similar shape, it's also salty and crunchy. If we were to create groups, peanuts and chestnuts could certainly be grouped together based on these characteristics. We can say they are neighbors.
+Imagine you are doing a blind taste test. You have all your years of knowledge about food and dishes, taste, texture, smell. So if you taste a peanut without seeing it, you will recognize it by taste, texture, and shape. In other words, you classified a food as a peanut based on its features. But what if it were a chestnut? It has a somewhat similar shape, it's also salty and crunchy. If we were to create groups, peanuts and chestnuts could certainly be grouped together based on these characteristics. We can say they are neighbors.
 <br><br>
 The nearest neighbors classification technique is capable of classifying an unlabeled observation according to the class of the nearest examples (neighbors) to it. It will work better as there is a clear distinction between groups and intra-group similarities. Otherwise, it may not be the best choice.
 <br><br>
@@ -109,7 +109,7 @@ K is a hyperparameter of the algorithm and its choice will affect the accuracy o
 <br><br>
 On the other hand, if k is set to 1, we may have underfitting - the comparison factor of the model will be too low.
 <br><br>
-Commonly, the value of k is chosen as the square root of the number of observations in the training set. There is also the practice of testing with values between 3 and 10. In any case, the value of k should be explored, we will see this in the model optimization part.
+Commonly, the value of k is chosen as the square root of the number of observations in the training set. There is also the practice of testing with values between 3 and 10. In any case, the value of k should be explored, we will see this in the model optimization lesson.
 <br><br>
 
 ## Data dimensionality
